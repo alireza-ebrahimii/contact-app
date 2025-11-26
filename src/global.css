@@ -1,0 +1,13 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: auto;
+  max-width: 1000px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
