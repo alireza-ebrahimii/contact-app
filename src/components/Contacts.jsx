@@ -65,7 +65,7 @@ function Contacts() {
         <button onClick={addHandler}>Add Contact</button>
       </div>
       {alert ? <p>{alert}</p> : ""}
-      <ContactList />
+      <ContactList contacts={contacts} />
     </>
   );
 }
