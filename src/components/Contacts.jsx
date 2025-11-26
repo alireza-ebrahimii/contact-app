@@ -33,6 +33,13 @@ function Contacts() {
 
     setContacts((contacts) => [...contacts, contact]);
 
+    setContact({
+      name: "",
+      lastName: "",
+      email: "",
+      phone: "",
+    });
+
     console.log(contacts);
   };
 
