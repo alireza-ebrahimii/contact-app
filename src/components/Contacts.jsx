@@ -10,6 +10,8 @@ function Contacts() {
 
   const [contacts, setContacts] = useState([]);
 
+  const [alert, setAlert] = useState("");
+
   const changeHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -18,6 +20,17 @@ function Contacts() {
   };
 
   const addHandler = () => {
+    if (
+      !contact.name ||
+      !contact.lastName ||
+      !contact.email ||
+      !contact.phone
+    ) {
+      setAlert("Please Enter Valid Data");
+      return;
+    }
+    setAlert("");
+
     setContacts((contacts) => [...contacts, contact]);
 
     console.log(contacts);
@@ -55,6 +68,7 @@ function Contacts() {
         value={contact.phone}
       />
       <button onClick={addHandler}>Add Contact</button>
+      {alert ? <p>{alert}</p> : ""}
     </>
   );
 }
