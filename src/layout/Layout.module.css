@@ -1,0 +1,33 @@
+.header {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.header h1 {
+  color: #304ffe;
+  margin-bottom: 20px;
+}
+
+.header p {
+  color: gray;
+}
+
+.header a {
+  text-decoration: none;
+  color: #304ffe;
+  background-color: #bbdefb;
+  padding: 3px 5px;
+  border-radius: 5px;
+  transition: 0.2s all ease-in-out;
+}
+
+.header a:hover {
+  color: #bbdefb;
+  background-color: #304ffe;
+}
+
+.footer {
+  text-align: center;
+  color: gray;
+  margin: 50px 0;
+}
