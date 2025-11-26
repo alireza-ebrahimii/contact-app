@@ -8,12 +8,19 @@ function Contacts() {
     phone: "",
   });
 
+  const [contacts, setContacts] = useState([]);
+
   const changeHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
 
     setContact((contact) => ({ ...contact, [name]: value }));
-    console.log(contact)
+  };
+
+  const addHandler = () => {
+    setContacts((contacts) => [...contacts, contact]);
+
+    console.log(contacts);
   };
 
   return (
@@ -47,7 +54,7 @@ function Contacts() {
         onChange={changeHandler}
         value={contact.phone}
       />
-      <button>Add Contact</button>
+      <button onClick={addHandler}>Add Contact</button>
     </>
   );
 }
