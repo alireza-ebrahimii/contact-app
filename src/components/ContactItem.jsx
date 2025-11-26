@@ -1,5 +1,5 @@
-function ContactItem({ contact }) {
-  const { name, lastName, email, phone } = contact;
+function ContactItem({ contact, deleteHandler }) {
+  const { name, lastName, email, phone, id } = contact;
   return (
     <div>
       <li>
@@ -14,6 +14,7 @@ function ContactItem({ contact }) {
           <span>📞</span>
           {phone}
         </p>
+        <button onClick={() => deleteHandler(id)}>🗑️</button>
       </li>
     </div>
   );
