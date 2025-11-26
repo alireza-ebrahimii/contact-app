@@ -1,8 +1,11 @@
 import { useState } from "react";
 import inputs from "../inputs";
+import ContactList from "./ContactList";
+import { v4 } from "uuid";
 
 function Contacts() {
   const [contact, setContact] = useState({
+    id: "",
     name: "",
     lastName: "",
     email: "",
@@ -32,7 +35,9 @@ function Contacts() {
     }
     setAlert("");
 
-    setContacts((contacts) => [...contacts, contact]);
+    const newContact = { ...contact, id: v4() };
+
+    setContacts((contacts) => [...contacts, newContact]);
 
     setContact({
       name: "",
@@ -60,6 +65,7 @@ function Contacts() {
         <button onClick={addHandler}>Add Contact</button>
       </div>
       {alert ? <p>{alert}</p> : ""}
+      <ContactList />
     </>
   );
 }
